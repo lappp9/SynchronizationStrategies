@@ -14,6 +14,8 @@
 		AE712A2620C642B0008FD95C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE712A2420C642B0008FD95C /* LaunchScreen.storyboard */; };
 		AE712A2920C642B0008FD95C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE712A2820C642B0008FD95C /* main.m */; };
 		AE712A3320C642B0008FD95C /* SynchronizationStrategiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE712A3220C642B0008FD95C /* SynchronizationStrategiesTests.m */; };
+		AE712A3E20C642BB008FD95C /* SynchronizationPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE712A3D20C642BB008FD95C /* SynchronizationPerformanceTests.m */; };
+		AE712A4120C642D5008FD95C /* Cache.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE712A3F20C642D5008FD95C /* Cache.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		AE712A2E20C642B0008FD95C /* SynchronizationStrategiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynchronizationStrategiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE712A3220C642B0008FD95C /* SynchronizationStrategiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchronizationStrategiesTests.m; sourceTree = "<group>"; };
 		AE712A3420C642B0008FD95C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE712A3D20C642BB008FD95C /* SynchronizationPerformanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchronizationPerformanceTests.m; sourceTree = "<group>"; };
+		AE712A3F20C642D5008FD95C /* Cache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Cache.mm; sourceTree = "<group>"; };
+		AE712A4020C642D5008FD95C /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		AE712A4220C642E6008FD95C /* TestThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThread.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		AE712A0D20C642AF008FD95C = {
 			isa = PBXGroup;
 			children = (
+				AE712A3D20C642BB008FD95C /* SynchronizationPerformanceTests.m */,
 				AE712A1820C642AF008FD95C /* SynchronizationStrategies */,
 				AE712A3120C642B0008FD95C /* SynchronizationStrategiesTests */,
 				AE712A1720C642AF008FD95C /* Products */,
@@ -81,10 +88,10 @@
 		AE712A1820C642AF008FD95C /* SynchronizationStrategies */ = {
 			isa = PBXGroup;
 			children = (
-				AE712A1920C642AF008FD95C /* AppDelegate.h */,
-				AE712A1A20C642AF008FD95C /* AppDelegate.m */,
-				AE712A1C20C642AF008FD95C /* ViewController.h */,
-				AE712A1D20C642AF008FD95C /* ViewController.m */,
+				AE712A4220C642E6008FD95C /* TestThread.h */,
+				AE712A4020C642D5008FD95C /* Cache.h */,
+				AE712A3F20C642D5008FD95C /* Cache.mm */,
+				AE712A4320C652C4008FD95C /* Unimportant Things */,
 				AE712A1F20C642AF008FD95C /* Main.storyboard */,
 				AE712A2220C642B0008FD95C /* Assets.xcassets */,
 				AE712A2420C642B0008FD95C /* LaunchScreen.storyboard */,
@@ -101,6 +108,17 @@
 				AE712A3420C642B0008FD95C /* Info.plist */,
 			);
 			path = SynchronizationStrategiesTests;
+			sourceTree = "<group>";
+		};
+		AE712A4320C652C4008FD95C /* Unimportant Things */ = {
+			isa = PBXGroup;
+			children = (
+				AE712A1920C642AF008FD95C /* AppDelegate.h */,
+				AE712A1A20C642AF008FD95C /* AppDelegate.m */,
+				AE712A1C20C642AF008FD95C /* ViewController.h */,
+				AE712A1D20C642AF008FD95C /* ViewController.m */,
+			);
+			path = "Unimportant Things";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +223,7 @@
 			files = (
 				AE712A1E20C642AF008FD95C /* ViewController.m in Sources */,
 				AE712A2920C642B0008FD95C /* main.m in Sources */,
+				AE712A4120C642D5008FD95C /* Cache.mm in Sources */,
 				AE712A1B20C642AF008FD95C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE712A3320C642B0008FD95C /* SynchronizationStrategiesTests.m in Sources */,
+				AE712A3E20C642BB008FD95C /* SynchronizationPerformanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QW5R48CC5;
 				INFOPLIST_FILE = SynchronizationStrategies/Info.plist;
@@ -378,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QW5R48CC5;
 				INFOPLIST_FILE = SynchronizationStrategies/Info.plist;
